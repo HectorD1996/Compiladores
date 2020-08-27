@@ -1,5 +1,8 @@
 #define PROCEDURE void
 
+"esto esta bien"
+"esto no
+
 #define BEGIN {
 #define END }
 

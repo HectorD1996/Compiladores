@@ -14,9 +14,12 @@ namespace MINIC
         static void Main(string[] args)
         {
             //Prueba
+            Console.WriteLine("Please enter your text file path");
+            String a = Console.ReadLine();
             string text = ""; 
             bool errorB = true;
-            string sample = System.IO.File.ReadAllText(@"ReadText.txt");
+            string sample = System.IO.File.ReadAllText(a.ToString());
+            string[] output = a.Split('.');
             var defs = new TokenDefinition[]
             {
            
@@ -27,6 +30,7 @@ namespace MINIC
             
             //string
             new TokenDefinition(@"([""'])(?:\\\1|.)*?\1", "QUOTED-STRING"),
+            new TokenDefinition(@"^[\""].*" , "Incomplete_String"),
             //numeros
             new TokenDefinition(@"[-+]?\d+\.\d*([eE][-+]?\d+)?", "T_DoubleConstant"),
             new TokenDefinition(@"[0][Xx][\d*a-fA-F]+", "T_Hexadecimal"),
@@ -108,24 +112,33 @@ namespace MINIC
             {
                 if (l.Token.ToString() == "Inicio_Coment") { errorB = false; }
                 if (l.Token.ToString() == "Final_Coment" & !errorB) { errorB = true; }
-                    if (l.Token.ToString() != "Error" && l.TokenContents.ToString().Length < 31)
+                    if (l.Token.ToString() != "Error" && l.TokenContents.ToString().Length < 31 && l.Token.ToString() != "Incomplete_String")
                     {
                         if (l.Token.ToString() != "SPACE" & l.Token.ToString() != "T_Comentario" & l.Token.ToString() != "Final_Coment" & errorB)
                         {
                             text += l.TokenContents + " line " + l.LineNumber + " cols " + l.Position +  " is " + l.Token + "\n\r";
-                            System.IO.File.WriteAllText(@"WriteText.txt", text);
-                            Console.WriteLine("Token: {0} Contents: {1}", l.Token, l.TokenContents);
+                            System.IO.File.WriteAllText(output[0] + ".out", text);
+                            
                         }
                     }
-                    else if(l.TokenContents.ToString().Length < 31)
+                    else if(l.TokenContents.ToString().Length < 31 && l.Token.ToString() != "Incomplete_String")
                     {
-                        text += "*** Error line 1. *** Unrecognized char: " + l.TokenContents + "\n\r";
-                        System.IO.File.WriteAllText(@"WriteText.txt", text);
+                        text += "*** Error line "+ l.LineNumber + " *** Unrecognized char: " + l.TokenContents + "\n\r";
+                        System.IO.File.WriteAllText(output[0] + ".out", text);
                         
-                    }else if(l.Token.ToString() != "T_Comentario")
+
+                    }
+                    else if(l.Token.ToString() != "T_Comentario" && l.Token.ToString() != "Incomplete_String")
                         {
-                            text += "*** Error line 1. Secuencia mayor al limite permitido" + "\n\r";
-                            System.IO.File.WriteAllText(@"WriteText.txt", text);
+                            text += "*** Error line " + l.LineNumber + " Secuencia mayor al limite permitido" + "\n\r";
+                            System.IO.File.WriteAllText(output[0] + ".out", text);
+                            
+
+                        }
+                        else if(l.Token.ToString() == "Incomplete_String")
+                        {
+                            text += "*** Error line " + l.LineNumber + " string sin terminar" + "\n\r";
+                            System.IO.File.WriteAllText(output[0] + ".out", text);
                             
                         }
                
@@ -134,8 +147,17 @@ namespace MINIC
             if (!errorB)
             {
                 text += "*** Error line "+ l.LineNumber +  "*** EOF in unfinished comment: " + "\n\r";
-                System.IO.File.WriteAllText(@"WriteText.txt", text);
+                System.IO.File.WriteAllText(output[0] + ".out", text);
+                
             }
+            else if (l.Token.ToString() == "Incomplete_String")
+            {
+                text += "*** Error line " + l.LineNumber + "*** EOF in unfinished string: " + "\n\r";
+                System.IO.File.WriteAllText(output[0]+".out", text);
+                
+            }
+            Console.WriteLine(text);
+            Console.ReadKey();
         }
 
         public interface IMatcher

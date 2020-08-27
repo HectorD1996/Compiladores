@@ -57,7 +57,7 @@ namespace MINIC
             new TokenDefinition(@"[C][o][n][s][o][l][e](?![A-Za-z\d_]+)", "T_Console"),
             new TokenDefinition(@"[W][r][i][t][e][L][i][n][e](?![A-Za-z\d_]+)", "T_WriteLine"),
             //identificadores
-            new TokenDefinition(@"[_A-Za-z][_A-Za-z0-9]*", "T_Identifier"),
+            new TokenDefinition(@"[_A-Za-z][_A-Za-z0-9]{0,30}", "T_Identifier"),
             //Operadores y carcteres de puntuacion
             new TokenDefinition(@"\.", "."),
             new TokenDefinition(@"\+", "+"),
@@ -112,7 +112,7 @@ namespace MINIC
                     {
                         if (l.Token.ToString() != "SPACE" & l.Token.ToString() != "T_Comentario" & l.Token.ToString() != "Final_Coment" & errorB)
                         {
-                            text += l.TokenContents + " line 1 cols 0 - 0 is " + l.Token + "\n\r";
+                            text += l.TokenContents + " line " + l.LineNumber + " cols " + l.Position +  " is " + l.Token + "\n\r";
                             System.IO.File.WriteAllText(@"WriteText.txt", text);
                             Console.WriteLine("Token: {0} Contents: {1}", l.Token, l.TokenContents);
                         }
@@ -130,6 +130,11 @@ namespace MINIC
                         }
                
                 
+            }
+            if (!errorB)
+            {
+                text += "*** Error line "+ l.LineNumber +  "*** EOF in unfinished comment: " + "\n\r";
+                System.IO.File.WriteAllText(@"WriteText.txt", text);
             }
         }
 

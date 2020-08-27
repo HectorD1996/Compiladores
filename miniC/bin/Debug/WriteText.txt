@@ -1,133 +1,0 @@
-class line 1 cols 0 - 0 is T_class
-Animal line 1 cols 0 - 0 is T_Identifier
-{ line 1 cols 0 - 0 is {
-int line 1 cols 0 - 0 is T_int
-height line 1 cols 0 - 0 is T_Identifier
-; line 1 cols 0 - 0 is ;
-double line 1 cols 0 - 0 is T_double
-weight line 1 cols 0 - 0 is T_Identifier
-; line 1 cols 0 - 0 is ;
-void line 1 cols 0 - 0 is T_void
-Eat line 1 cols 0 - 0 is T_Identifier
-() line 1 cols 0 - 0 is ()
-{ line 1 cols 0 - 0 is {
-weight line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-weight line 1 cols 0 - 0 is T_Identifier
-* line 1 cols 0 - 0 is *
-2.0 line 1 cols 0 - 0 is T_DoubleConstant
-; line 1 cols 0 - 0 is ;
-} line 1 cols 0 - 0 is }
-} line 1 cols 0 - 0 is }
-class line 1 cols 0 - 0 is T_class
-Cat line 1 cols 0 - 0 is T_Identifier
-extends line 1 cols 0 - 0 is T_Identifier
-Animal line 1 cols 0 - 0 is T_Identifier
-{ line 1 cols 0 - 0 is {
-string line 1 cols 0 - 0 is T_string
-name line 1 cols 0 - 0 is T_Identifier
-; line 1 cols 0 - 0 is ;
-void line 1 cols 0 - 0 is T_void
-Meow line 1 cols 0 - 0 is T_Identifier
-() line 1 cols 0 - 0 is ()
-{ line 1 cols 0 - 0 is {
-} line 1 cols 0 - 0 is }
-int line 1 cols 0 - 0 is T_int
-a line 1 cols 0 - 0 is T_Identifier
-; line 1 cols 0 - 0 is ;
-void line 1 cols 0 - 0 is T_void
-main line 1 cols 0 - 0 is T_Identifier
-() line 1 cols 0 - 0 is ()
-{ line 1 cols 0 - 0 is {
-int line 1 cols 0 - 0 is T_int
-b line 1 cols 0 - 0 is T_Identifier
-; line 1 cols 0 - 0 is ;
-int line 1 cols 0 - 0 is T_int
-a line 1 cols 0 - 0 is T_Identifier
-; line 1 cols 0 - 0 is ;
-int line 1 cols 0 - 0 is T_int
-d line 1 cols 0 - 0 is T_Identifier
-; line 1 cols 0 - 0 is ;
-bool line 1 cols 0 - 0 is T_bool
-TRUE line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-false line 1 cols 0 - 0 is T_FALSE
-; line 1 cols 0 - 0 is ;
-d line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-0xa2F line 1 cols 0 - 0 is T_Hexadecimal
-; line 1 cols 0 - 0 is ;
-a line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-0X00A1 line 1 cols 0 - 0 is T_Hexadecimal
-+ line 1 cols 0 - 0 is +
-d line 1 cols 0 - 0 is T_Identifier
-; line 1 cols 0 - 0 is ;
-d line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-. line 1 cols 0 - 0 is .
-12 line 1 cols 0 - 0 is T_IntConstant
-E line 1 cols 0 - 0 is T_Identifier
-+2 line 1 cols 0 - 0 is T_IntConstant
-; line 1 cols 0 - 0 is ;
-b line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-12. line 1 cols 0 - 0 is T_DoubleConstant
-d line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-12.E2 line 1 cols 0 - 0 is T_DoubleConstant
-a line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-. line 1 cols 0 - 0 is .
-1232 line 1 cols 0 - 0 is T_IntConstant
-* line 1 cols 0 - 0 is *
-. line 1 cols 0 - 0 is .
-12 line 1 cols 0 - 0 is T_IntConstant
-E line 1 cols 0 - 0 is T_Identifier
-+ line 1 cols 0 - 0 is +
--2 line 1 cols 0 - 0 is T_IntConstant
-; line 1 cols 0 - 0 is ;
-} line 1 cols 0 - 0 is }
-void line 1 cols 0 - 0 is T_void
-main line 1 cols 0 - 0 is T_Identifier
-() line 1 cols 0 - 0 is ()
-{ line 1 cols 0 - 0 is {
-class line 1 cols 0 - 0 is T_class
-Cat line 1 cols 0 - 0 is T_Identifier
-kitty line 1 cols 0 - 0 is T_Identifier
-; line 1 cols 0 - 0 is ;
-*** Error line 1. Secuencia mayor al limite permitido
-= line 1 cols 0 - 0 is =
-"hola como estas" line 1 cols 0 - 0 is QUOTED-STRING
-; line 1 cols 0 - 0 is ;
-kitty line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-New line 1 cols 0 - 0 is T_New
-( line 1 cols 0 - 0 is (
-Cat line 1 cols 0 - 0 is T_Identifier
-) line 1 cols 0 - 0 is )
-; line 1 cols 0 - 0 is ;
-kitty line 1 cols 0 - 0 is T_Identifier
-. line 1 cols 0 - 0 is .
-height line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-0000005 line 1 cols 0 - 0 is T_IntConstant
-; line 1 cols 0 - 0 is ;
-kitty line 1 cols 0 - 0 is T_Identifier
-. line 1 cols 0 - 0 is .
-weight line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-1.12E-000002 line 1 cols 0 - 0 is T_DoubleConstant
-besty line 1 cols 0 - 0 is T_Identifier
-. line 1 cols 0 - 0 is .
-name line 1 cols 0 - 0 is T_Identifier
-= line 1 cols 0 - 0 is =
-"kitty" line 1 cols 0 - 0 is QUOTED-STRING
-; line 1 cols 0 - 0 is ;
-kitty line 1 cols 0 - 0 is T_Identifier
-. line 1 cols 0 - 0 is .
-Meow line 1 cols 0 - 0 is T_Identifier
-() line 1 cols 0 - 0 is ()
-; line 1 cols 0 - 0 is ;
-} line 1 cols 0 - 0 is }
-
